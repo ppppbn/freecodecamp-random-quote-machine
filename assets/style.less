@@ -1,0 +1,80 @@
+html, body {
+  height: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.vertical-center {
+  display : flex;
+  align-items: center;
+}
+
+.horizontal-center {
+  display : flex;
+  justify-content: center;
+}
+
+.big-outer-container {
+  .main-container {
+    transition: all 1s ease-in-out;
+    height: auto;
+    min-height: 250px;
+    background : white;
+    box-shadow : 2px 3px 1px 1px #bbb;
+    border-radius : 4px;
+    .quote-container {
+      margin : 20px 0px;
+      .text {
+        display: inline;
+        margin: 0px 5px;
+      }
+      .quote-icon-container {
+        display: inline-block;
+        position: relative;
+        .fa-quote-left {
+          display: none;
+          position: absolute;
+          top: -20px;
+          left: -15px;
+        }
+        .fa-quote-right {
+          display: none;
+          position: absolute;
+          top: -20px;
+          right: -15px;
+        }
+      }
+    }
+    .author-container {
+      margin: 10px;
+      padding-bottom: 60px;
+      text-align: right;
+    }
+    .button-container {
+      position: absolute;
+      bottom: 40px;
+      right: 0px;
+      left: 0px;
+      width: 100%;
+      .button-container__left {
+        padding-left: 40px;
+        .btn {
+          width: 40px;
+          height: 40px;
+          i {
+            margin-top: 3px;
+            font-size: 18px;
+          }
+        }
+      }
+      .button-container__right {
+        padding-right: 40px;
+        .btn {
+          min-height: 40px;
+        }
+      }
+    }
+  }
+}

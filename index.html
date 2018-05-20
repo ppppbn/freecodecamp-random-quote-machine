@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Random Quote Machine</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="./assets/fontawesome/fontawesome-all.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/fontawesome/fontawesome-all.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid full-height big-outer-container">
+      <div class="row full-height vertical-center horizontal-center">
+        <div class="col-lg-4 col-md-6 col-sm-8 col-xs-10 main-container">
+          <div class="col-xs-12">
+            <div class="quote-container text-center">
+              <div class="quote-icon-container">
+                <i class="fas fa-quote-left"></i> 
+              </div>
+              <h3 id="quote" class="text"></h4>
+              <div class="quote-icon-container">
+                <i class="fas fa-quote-right"></i>
+              </div>
+            </div>
+            <div class="author-container">
+              <h5 id="author" class="text"></h5>
+            </div>
+          </div>
+          <div class="button-container">
+            <div class="pull-left button-container__left">
+              <a class="btn social-button" id="twitter" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a class="btn social-button" id="tumblr" target="_blank">
+                <i class="fab fa-tumblr"></i>
+              </a>
+            </div>
+            <div class="pull-right button-container__right">
+              <button class="btn" onclick="getQuote()">New Quote</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function(){
+        getQuote();
+      })
+
+      var quote = "";
+
+      const bg = ['bg-primary', 'bg-success', 'bg-danger', 'bg-warning', 'bg-info'];
+      const text = ['text-primary', 'text-success', 'text-danger', 'text-warning', 'text-info'];
+      const btn = ['btn-primary', 'btn-success', 'btn-danger', 'btn-warning', 'btn-info'];
+
+      function getQuote(){
+        hideText();
+        var random = Math.floor(Math.random() * bg.length);
+        changeColor(random);
+        
+        $.ajax({
+          url : "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=1",
+          type : "GET",
+          beforeSend: function(xhr){
+            xhr.setRequestHeader('X-Mashape-Key', 'K8oWoiK0Vrmshbm6xBmuCdZp5q50p1mqxlKjsnbBldGb2hYlOh');
+            xhr.setRequestHeader("Accept", "application/json");
+          },
+          success: function(data){
+            if(data && data.length){
+              $('#quote').html(data[0].quote);
+              $('#author').html("- " + data[0].author + " -");
+              $('#twitter').attr('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent(data[0].quote));
+              $('#tumblr').attr('href', 'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption='+ encodeURIComponent(data[0].author)+'&content=' + encodeURIComponent(data[0].quote)+'&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button');
+              showText();
+            }
+          },
+          error: function(error){
+            var data = [{
+              quote : "Something wrong happens. Try again.",
+              author : "Unknown"
+            }]
+            $('#quote').html(data[0].quote);
+            $('#author').html("- " + data[0].author + " -");
+            $('#twitter').attr('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent(data[0].quote));
+            $('#tumblr').attr('href', 'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption='+ encodeURIComponent(data[0].author)+'&content=' + encodeURIComponent(data[0].quote)+'&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button');
+            showText();
+          }
+        }) 
+      }
+
+      function changeColor(color){
+        $('.big-outer-container').removeClass(bg.join(" ")).addClass(bg[color]);
+        $('.text').removeClass(text.join(" ")).addClass(text[color]);
+        $('.fas').removeClass(text.join(" ")).addClass(text[color]);
+        $('.btn').removeClass(btn.join(" ")).addClass(btn[color]);
+      }
+
+      function hideText(){
+        $('.text').fadeOut(150);
+        $('.fas').fadeOut(150);
+      }
+
+      function showText(){
+        $('.text').fadeIn(300);
+        $('.fas').fadeIn(300);
+      }
+
+    </script>
+  </body>
+</html>

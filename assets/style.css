@@ -1,0 +1,75 @@
+html,
+body {
+  height: 100%;
+}
+.full-height {
+  height: 100%;
+}
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+.horizontal-center {
+  display: flex;
+  justify-content: center;
+}
+.big-outer-container .main-container {
+  transition: all 1s ease-in-out;
+  height: auto;
+  min-height: 250px;
+  background: white;
+  box-shadow: 2px 3px 1px 1px #bbb;
+  border-radius: 4px;
+}
+.big-outer-container .main-container .quote-container {
+  margin: 20px 0px;
+}
+.big-outer-container .main-container .quote-container .text {
+  display: inline;
+  margin: 0px 5px;
+}
+.big-outer-container .main-container .quote-container .quote-icon-container {
+  display: inline-block;
+  position: relative;
+}
+.big-outer-container .main-container .quote-container .quote-icon-container .fa-quote-left {
+  display: none;
+  position: absolute;
+  top: -20px;
+  left: -15px;
+}
+.big-outer-container .main-container .quote-container .quote-icon-container .fa-quote-right {
+  display: none;
+  position: absolute;
+  top: -20px;
+  right: -15px;
+}
+.big-outer-container .main-container .author-container {
+  margin: 10px;
+  padding-bottom: 60px;
+  text-align: right;
+}
+.big-outer-container .main-container .button-container {
+  position: absolute;
+  bottom: 40px;
+  right: 0px;
+  left: 0px;
+  width: 100%;
+}
+.big-outer-container .main-container .button-container .button-container__left {
+  padding-left: 40px;
+}
+.big-outer-container .main-container .button-container .button-container__left .btn {
+  width: 40px;
+  height: 40px;
+}
+.big-outer-container .main-container .button-container .button-container__left .btn i {
+  margin-top: 3px;
+  font-size: 18px;
+}
+.big-outer-container .main-container .button-container .button-container__right {
+  padding-right: 40px;
+}
+.big-outer-container .main-container .button-container .button-container__right .btn {
+  min-height: 40px;
+}
