@@ -26,7 +26,7 @@ body {
 }
 .big-outer-container .main-container .quote-container .text {
   display: inline;
-  margin: 0px 5px;
+  margin: 0px 10px;
 }
 .big-outer-container .main-container .quote-container .quote-icon-container {
   display: inline-block;
