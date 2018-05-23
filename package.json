@@ -1,0 +1,25 @@
+{
+  "name": "random-quote-machine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage" : "https://ppppbn.github.io/freecodecamp-random-quote-machine",
+  "dependencies": {
+    "gh-pages": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppppbn/freecodecamp-random-quote-machine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ppppbn/freecodecamp-random-quote-machine/issues"
+  }
+}
