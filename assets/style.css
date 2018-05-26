@@ -21,12 +21,12 @@ body {
   box-shadow: 2px 3px 1px 1px #bbb;
   border-radius: 4px;
 }
-@media screen and (max-height: 320px) {
+@media screen and (max-width: 320px) {
   .big-outer-container .main-container {
     min-height: 350px;
   }
 }
-@media screen and (max-height: 450px) and (min-height: 321px) {
+@media screen and (max-width: 450px) and (min-width: 321px) {
   .big-outer-container .main-container {
     min-height: 300px;
   }
