@@ -13,6 +13,9 @@ body {
   display: flex;
   justify-content: center;
 }
+.transition {
+  transition: all 1s ease-in-out;
+}
 .big-outer-container .main-container {
   transition: all 1s ease-in-out;
   height: auto;
