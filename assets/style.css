@@ -55,13 +55,11 @@ body {
   position: relative;
 }
 .big-outer-container .main-container .quote-container .quote-icon-container .fa-quote-left {
-  display: none;
   position: absolute;
   top: -20px;
   left: -15px;
 }
 .big-outer-container .main-container .quote-container .quote-icon-container .fa-quote-right {
-  display: none;
   position: absolute;
   top: -20px;
   right: -15px;
