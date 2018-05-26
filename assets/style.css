@@ -16,6 +16,12 @@ body {
 .transition {
   transition: all 1s ease-in-out;
 }
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-1 {
+  opacity: 1;
+}
 .big-outer-container .main-container {
   transition: all 1s ease-in-out;
   height: auto;

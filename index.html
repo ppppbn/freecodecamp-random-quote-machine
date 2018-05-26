@@ -100,13 +100,13 @@
       }
 
       function hideText(){
-        $('.text').fadeOut(500);
-        $('.fas').fadeOut(500);
+        $('.text').removeClass("opacity-1").addClass("opacity-0");
+        $('.fas').removeClass("opacity-1").addClass("opacity-0");
       }
 
       function showText(){
-        $('.text').fadeIn(500);
-        $('.fas').fadeIn(500);
+        $('.text').removeClass("opacity-0").addClass("opacity-1");
+        $('.fas').removeClass("opacity-0").addClass("opacity-1");
       }
 
     </script>
