@@ -21,6 +21,9 @@ body {
   box-shadow: 2px 3px 1px 1px #bbb;
   border-radius: 4px;
 }
+.big-outer-container .main-container .col-xs-12 {
+  margin-bottom: 15px;
+}
 .big-outer-container .main-container .quote-container {
   margin: 20px 0px;
 }
